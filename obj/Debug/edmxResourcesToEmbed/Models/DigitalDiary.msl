@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DigitalDiaryModelStoreContainer" CdmEntityContainer="DigitalDiaryContext">
+    <EntitySetMapping Name="Diaries">
+      <EntityTypeMapping TypeName="DigitalDiaryModel.Diary">
+        <MappingFragment StoreEntitySet="Diary">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Heading" ColumnName="Heading" />
+          <ScalarProperty Name="DailyContent" ColumnName="DailyContent" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Priorities">
+      <EntityTypeMapping TypeName="DigitalDiaryModel.Priority">
+        <MappingFragment StoreEntitySet="Priority">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Priority1" ColumnName="Priority" />
+          <ScalarProperty Name="DiaryID" ColumnName="DiaryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DigitalDiaryModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
