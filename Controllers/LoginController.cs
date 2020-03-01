@@ -18,18 +18,17 @@ namespace DigitalDiary.Controllers
         [HttpPost]
         public ActionResult Index(User u)
         {
-            //var login = context.Set<User>().Where(x => x.Name == u.Name && x.Password == u.Password);
-            var login = context.Users.Where(x => x.Name == u.Name && x.Password == u.Password);
-            return Content(login.ToString());
-            if (login != null)
+            try
             {
-                //Session["UserID"] = login.;
+                var login = context.Set<User>().SingleOrDefault(x => x.Name == u.Name && x.Password == u.Password);
+                Session["UserID"] = login.ID;
                 return RedirectToAction("Index", "Diary");
             }
-            else
+            catch (Exception e)
             {
-                ViewBag.Error = "Login Attempt Failed";
-                return RedirectToAction("Login");
+
+                TempData["Error"] = "Login Attempt Failed";
+                return RedirectToAction("Index");
             }
 
         }

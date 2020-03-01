@@ -23,6 +23,17 @@ namespace DigitalDiary.Controllers
 
         }
         [HttpGet]
+        public ActionResult Registration()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Registraton(User u)
+        {
+            userRepo.Insert(u);
+            return RedirectToAction("Index","Login");
+        }
+        [HttpGet]
         public ActionResult Create()
         {
             return View();

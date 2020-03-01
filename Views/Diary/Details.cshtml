@@ -19,14 +19,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DailyContent)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DailyContent)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.CreatedAt)
         </dt>
 
@@ -43,21 +35,16 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Image)
+            @Html.DisplayNameFor(model => model.DailyContent)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Image)
+            @Html.DisplayFor(model => model.DailyContent)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.User.Name)
-        </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.User.Name)
+            <img src="~/Content/Images/@Html.DisplayFor(model => model.Image)" alt="" />
         </dd>
-
     </dl>
 </div>
 <p>

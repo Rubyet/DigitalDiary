@@ -12,10 +12,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Heading)
+            
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DailyContent)
+            @Html.DisplayNameFor(model => model.Heading)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CreatedAt)
@@ -23,41 +23,31 @@
         <th>
             @Html.DisplayNameFor(model => model.ModifiedAt)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Image)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.User.Name)
-        </th>
+
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Heading)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DailyContent)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedAt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ModifiedAt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Image)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.User.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
+<tr>
+    <td>
+        <img src="~/Content/Images/@Html.DisplayFor(model => item.Image)" alt="" height="100" width="80"/>
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Heading)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CreatedAt)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ModifiedAt)
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+</tr>
 }
 
 </table>
